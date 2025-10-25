@@ -27,9 +27,9 @@
                 <h1>Private chat that never compromises.</h1>
                 <p>tryme wraps every conversation in end-to-end encryption, hardware-isolated keys, and a zero-trust cloud. No ads, no trackers, no surprises.</p>
                 <form class="waitlist" id="waitlistForm">
-                    <label for="email" class="visually-hidden">Email address</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                    <button type="submit">Join the waitlist</button>
+                    <label for="profileName" class="visually-hidden">Your name</label>
+                    <input type="text" id="profileName" name="profileName" placeholder="Your name" required minlength="2" maxlength="32" autocomplete="name">
+                    <button type="submit">Join</button>
                 </form>
                 <p class="waitlist-feedback" id="waitlistFeedback" role="status" aria-live="polite"></p>
             </div>

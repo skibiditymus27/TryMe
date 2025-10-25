@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access your tryme secure space, manage your profile, and connect with trusted contacts.">
+    <title>tryme Secure Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header compact">
+        <nav class="top-nav">
+            <div class="brand">tryme</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#directory">Directory</a></li>
+                <li><a href="#profile">Profile</a></li>
+            </ul>
+            <button class="cta" id="themeToggle" aria-label="Toggle dark mode">Dark mode</button>
+        </nav>
+    </header>
+
+    <main class="portal-shell">
+        <section class="token-panel" aria-labelledby="tokenHeading">
+            <h1 id="tokenHeading">Your login token</h1>
+            <p class="token-subhead">Memorize or store this code. It is required for future logins.</p>
+            <div class="token-display" id="tokenValue">--------</div>
+            <div class="token-actions">
+                <button class="cta" id="copyToken">Copy token</button>
+            </div>
+        </section>
+
+        <section class="profile-panel" id="profile" aria-labelledby="profileHeading">
+            <h2 id="profileHeading">Profile</h2>
+            <p class="profile-greeting">Welcome, <span id="profileNameDisplay">Newcomer</span></p>
+            <form id="profileForm" class="profile-form">
+                <label for="profileNameField">Display name</label>
+                <input type="text" id="profileNameField" name="profileName" minlength="2" maxlength="32" required autocomplete="name">
+                <button type="submit" class="cta secondary">Update</button>
+            </form>
+            <p class="profile-status" id="profileStatus" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="directory-panel" id="directory" aria-labelledby="directoryHeading">
+            <h2 id="directoryHeading">Directory</h2>
+            <div class="directory-search">
+                <label for="directorySearch" class="visually-hidden">Search contacts</label>
+                <input type="search" id="directorySearch" placeholder="Search by name" autocomplete="off">
+            </div>
+            <ul class="directory-results" id="directoryResults"></ul>
+        </section>
+
+        <section class="chat-panel" aria-labelledby="chatHeading">
+            <h2 id="chatHeading">Conversation</h2>
+            <div class="chat-panel__header" id="chatHeader">Pick a contact to start chatting</div>
+            <div class="chat-panel__history" id="chatHistory" aria-live="polite"></div>
+            <div class="chat-panel__intro" id="chatIntro">
+                <p>Select a contact from the directory to begin an encrypted session.</p>
+            </div>
+            <form class="chat-panel__composer hidden" id="chatComposer">
+                <label for="chatComposerInput" class="visually-hidden">Type a message</label>
+                <input type="text" id="chatComposerInput" placeholder="Send a private note" autocomplete="off">
+                <button type="submit" class="cta">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-brand">tryme</div>
+        <p>Safeguard every conversation. © <span id="year"></span> tryme.</p>
+        <div class="footer-links">
+            <a href="index.html">Return to landing</a>
+            <a href="#profile">Profile</a>
+            <a href="#directory">Directory</a>
+        </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
