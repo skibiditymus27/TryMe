@@ -1,0 +1,15 @@
+import { Router } from 'express';
+
+import directoryRouter from './directory.js';
+import healthRouter from './health.js';
+import profileRouter from './profile.js';
+import tokenRouter from './token.js';
+
+const apiRouter = Router();
+
+apiRouter.use('/health', healthRouter);
+apiRouter.use('/token', tokenRouter);
+apiRouter.use('/directory', directoryRouter);
+apiRouter.use('/profile', profileRouter);
+
+export default apiRouter;
