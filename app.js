@@ -446,6 +446,41 @@ if (chatComposer && chatComposerInput) {
     });
 }
 
+function setupAnchorNavigation() {
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    if (!anchorLinks.length) {
+        return;
+    }
+    anchorLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href || href.length <= 1) {
+            return;
+        }
+        const targetId = href.slice(1);
+        link.addEventListener('click', event => {
+            const target = document.getElementById(targetId);
+            if (!target) {
+                return;
+            }
+            event.preventDefault();
+            const currentHighlight = document.querySelector('.portal-highlight');
+            if (currentHighlight) {
+                currentHighlight.classList.remove('portal-highlight');
+            }
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (window.history && typeof window.history.replaceState === 'function') {
+                window.history.replaceState(null, '', `#${targetId}`);
+            } else {
+                window.location.hash = targetId;
+            }
+            target.classList.add('portal-highlight');
+            setTimeout(() => {
+                target.classList.remove('portal-highlight');
+            }, 1200);
+        });
+    });
+}
+
 function hydratePortal() {
     if (!tokenValue && !profileNameDisplay && !directoryResults) {
         return;
@@ -456,4 +491,5 @@ function hydratePortal() {
     renderDirectory();
 }
 
+setupAnchorNavigation();
 hydratePortal();
