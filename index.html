@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="tryme is a privacy-first chat service delivering secure messaging without compromises.">
+    <title>tryme | Private Chat Reinvented</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="top-nav">
+            <div class="brand">tryme</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#preview">Preview</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <button class="cta" id="themeToggle" aria-label="Toggle dark mode">Dark mode</button>
+        </nav>
+        <section class="hero">
+            <div class="hero-copy">
+                <h1>Private chat that never compromises.</h1>
+                <p>tryme wraps every conversation in end-to-end encryption, hardware-isolated keys, and a zero-trust cloud. No ads, no trackers, no surprises.</p>
+                <form class="waitlist" id="waitlistForm">
+                    <label for="email" class="visually-hidden">Email address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    <button type="submit">Join the waitlist</button>
+                </form>
+                <p class="waitlist-feedback" id="waitlistFeedback" role="status" aria-live="polite"></p>
+            </div>
+            <div class="hero-card" role="img" aria-label="Illustration of a secure chat">
+                <header class="hero-card__header">
+                    <div class="hero-card__avatar" aria-hidden="true">QF</div>
+                    <div class="hero-card__identity">
+                        <p class="hero-card__title">Quantum Friend</p>
+                        <p class="hero-card__subtitle">Secure session active</p>
+                    </div>
+                    <span class="hero-card__badge">Verified</span>
+                </header>
+                <div class="hero-card__body">
+                    <div class="hero-card__message hero-card__message--them">
+                        <span class="hero-card__sender" aria-hidden="true">QF</span>
+                        <p>Keys rotated. Ready when you are.</p>
+                    </div>
+                    <div class="hero-card__message hero-card__message--me">
+                        <span class="hero-card__sender" aria-hidden="true">me</span>
+                        <p>Perfect. Initiating post-quantum handoff.</p>
+                    </div>
+                    <div class="hero-card__message hero-card__message--system">
+                        <p>Metadata padding engaged. Traffic normalized.</p>
+                    </div>
+                </div>
+                <footer class="hero-card__footer">
+                    <div class="hero-card__signal" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="hero-card__cipher">
+                        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                            <path d="M12 6h-1V4a3 3 0 0 0-6 0v2H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1Zm-3 5.73V12a1 1 0 1 1-2 0v-.27a1.5 1.5 0 1 1 2 0ZM6 6V4a2 2 0 0 1 4 0v2Z" fill="currentColor" />
+                        </svg>
+                        <span>PQ-AEAD tunnel</span>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="metrics" id="mission">
+            <div class="metric-item">
+                <span class="metric">0</span>
+                <span class="metric-label">ads or trackers</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric">12h</span>
+                <span class="metric-label">message lifespan by default</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric">4096-bit</span>
+                <span class="metric-label">post-quantum key exchange</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric">ISO 27001</span>
+                <span class="metric-label">security posture</span>
+            </div>
+        </section>
+
+        <section class="feature-grid" id="features">
+            <article class="feature-card">
+                <h2>Zero-knowledge architecture</h2>
+                <p>Only you and your contacts can read messages. Our servers see cipher text and metadata is minimized with onion-routed relays.</p>
+            </article>
+            <article class="feature-card">
+                <h2>Ephemeral by design</h2>
+                <p>Conversations auto-expire after the window you choose. Hold on to what matters, forget the rest with verified deletion trails.</p>
+            </article>
+            <article class="feature-card">
+                <h2>Hardware-backed identity</h2>
+                <p>Private keys stay sealed inside secure enclaves with biometric unlock and offline recovery codes you control.</p>
+            </article>
+            <article class="feature-card">
+                <h2>Transparent protocols</h2>
+                <p>Every line of cryptography is audited and published, so you can verify rather than trust our privacy promises.</p>
+            </article>
+        </section>
+
+        <section class="timeline" aria-label="How tryme protects your chat">
+            <h2>Built to keep your words yours</h2>
+            <ol class="timeline-list">
+                <li><span>1</span>Device handshake with mutual hardware attestation.</li>
+                <li><span>2</span>Post-quantum double ratchet spins unique session keys per message.</li>
+                <li><span>3</span>Steganographic transport hides chatter in constant-rate packets.</li>
+                <li><span>4</span>Self-destructing backups ensure recovery without retention.</li>
+            </ol>
+        </section>
+
+        <section class="preview" id="preview">
+            <div class="preview-header">
+                <h2>See tryme in action</h2>
+                <p>Experience a privacy-first chat flow. Nothing leaves your browser in this demo.</p>
+            </div>
+            <div class="chat-frame">
+                <div class="chat-log" id="chatLog" aria-live="polite"></div>
+                <form class="chat-input" id="chatForm">
+                    <label for="chatMessage" class="visually-hidden">Type your message</label>
+                    <input id="chatMessage" type="text" placeholder="Type a secure message" autocomplete="off" required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <aside class="privacy-callouts">
+                <h3>Privacy cues</h3>
+                <ul>
+                    <li>Local encryption with Web Crypto API before display.</li>
+                    <li>Message controls: wipe, edit, verify fingerprint.</li>
+                    <li>Adaptive metadata padding to blur traffic patterns.</li>
+                </ul>
+                <button class="cta secondary" id="wipeChat">Wipe demo data</button>
+            </aside>
+        </section>
+
+        <section class="trust">
+            <h2>Trust, but verify</h2>
+            <div class="trust-grid">
+                <div>
+                    <h3>Independent audits</h3>
+                    <p>Global security firms and open-source communities assess our releases before they ship.</p>
+                </div>
+                <div>
+                    <h3>Transparent roadmap</h3>
+                    <p>Privacy promises mean nothing without accountability. Track every milestone and vote on priorities.</p>
+                </div>
+                <div>
+                    <h3>Community governance</h3>
+                    <p>Propose, debate, and ratify new privacy features through our member-led security council.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq" id="faq">
+            <h2>Questions people ask</h2>
+            <details>
+                <summary>How does tryme differ from other encrypted messengers?</summary>
+                <p>We pair industry-leading encryption with an obsessive focus on minimizing metadata, making it nearly impossible to link chats to identities.</p>
+            </details>
+            <details>
+                <summary>Do you store any personal data?</summary>
+                <p>Only what is required to maintain your account. You can export, anonymize, or delete everything at any time.</p>
+            </details>
+            <details>
+                <summary>Is the code open source?</summary>
+                <p>Yes. Core cryptographic libraries and client apps are open for review, with reproducible builds for every release.</p>
+            </details>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-brand">tryme</div>
+        <p>Privacy is not a feature; it is the foundation. © <span id="year"></span> tryme.</p>
+        <div class="footer-links">
+            <a href="#">Security whitepaper</a>
+            <a href="#">Transparency report</a>
+            <a href="#">Responsible disclosure</a>
+        </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
